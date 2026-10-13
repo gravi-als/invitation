@@ -115,6 +115,37 @@
     .dress{margin-top:130px;padding:20px 15px}
     .rsvp{padding:20px 14px}
   }
+  .radio-group {
+  display: grid;
+  gap: 8px;
+  margin: 4px 0 10px 4px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--ink-dark);
+  cursor: pointer;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(104, 157, 190, 0.25);
+  border-radius: 20px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.radio-label:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #70a9cc;
+}
+
+.radio-label input[type="radio"] {
+  accent-color: #659fc4; /* Красивый синий цвет выбранной точки под ваш дизайн */
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
@@ -169,12 +200,20 @@
       <p></p>
       <form class="form" id="rsvpForm">
         <input class="field" name="name" placeholder="Ваше имя" autocomplete="name" required>
-        <select class="field" name="attendance" required>
-          <option value="" selected disabled>Будете с нами?</option>
-          <option value="yes">Да, обязательно буду!</option>
-          <option value="no">К сожалению, не смогу</option>
-          <option value="maybe">Пока не уверен(а)</option>
-        </select>
+        <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="attendance" value="yes" required>
+                            <span>Обязательно буду!</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="attendance" value="no">
+                            <span>К сожалению, не смогу</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="attendance" value="maybe">
+                            <span>Пока не уверен(а)</span>
+                        </label>
+                    </div>
         <button class="primary" type="submit">Отправить&nbsp; →</button>
       </form>
       <div class="toast" id="toast" role="status"></div>
