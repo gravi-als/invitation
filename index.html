@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#eaf7fc">
+<title>Мой первый год — приглашение</title>
+<style>
+  :root{
+    --ink:#426f91; --ink-dark:#315b7b; --blue:#6ea8cc; --pale:#f2fbff;
+    --glass:rgba(255,255,255,.72); --line:rgba(110,168,204,.24);
+    --shadow:0 18px 55px rgba(57,112,148,.14);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; min-height:100vh; padding:24px 14px 40px; color:var(--ink);
+    font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    background:
+      radial-gradient(ellipse at 8% 10%,rgba(255,255,255,.98),transparent 34%),
+      radial-gradient(ellipse at 92% 32%,rgba(182,224,242,.45),transparent 36%),
+      linear-gradient(145deg,#dff2fa,#f8fdff 52%,#d9eff9);
+  }
+  button,input,select{font:inherit}
+  button{cursor:pointer}
+  .invite{
+    position:relative; width:min(100%,540px); margin:auto; overflow:hidden;
+    border:1px solid rgba(255,255,255,.9); border-radius:38px;
+    background:linear-gradient(165deg,rgba(255,255,255,.88),rgba(239,249,255,.87));
+    box-shadow:0 10px 45px rgba(48,104,143,.13),inset 0 0 0 1px rgba(100,164,201,.12);
+  }
+  .invite:before,.invite:after{content:"";position:absolute;pointer-events:none;border-radius:50%;filter:blur(1px)}
+  .invite:before{width:260px;height:260px;right:-150px;top:120px;background:rgba(177,220,241,.35)}
+  .invite:after{width:280px;height:280px;left:-190px;bottom:140px;background:rgba(198,232,247,.38)}
+  .content{position:relative;z-index:1;padding:24px clamp(22px,6vw,42px) 28px}
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:32px}
+  .icon-btn{display:grid;place-items:center;width:34px;height:34px;padding:0;border:0;background:transparent;color:var(--ink);font-size:25px}
+  .script{font-family:"Snell Roundhand","Segoe Script","Brush Script MT",cursive;font-style:italic;font-weight:400;letter-spacing:.02em}
+  .brand{font-size:clamp(17px,4vw,22px);text-align:center;white-space:nowrap}
+  .hero{position:relative;min-height:400px;padding-top:2px}
+  .eyebrow{font-size:clamp(24px,5vw,32px);margin:0 0 -3px 0}
+  h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:.015em;font-size:clamp(68px,17vw,100px);line-height:.98;margin:0;color:#568db5}
+  .hero-copy{max-width:245px;font-size:15px;line-height:1.32;letter-spacing:.04em;text-transform:uppercase;margin:8px 0 24px}
+  .baby{
+    position:absolute;right:-42px;top:82px;width:64%;height:310px;object-fit:cover;object-position:center 20%;
+    border-radius:48% 48% 18% 20% / 36% 36% 12% 12%;mix-blend-mode:multiply;
+    mask-image:linear-gradient(to bottom,#000 76%,transparent 100%);
+    -webkit-mask-image:linear-gradient(to bottom,#000 76%,transparent 100%);
+  }
+  .facts{position:relative;z-index:2;display:grid;gap:14px;max-width:300px}
+  .fact{display:grid;grid-template-columns:27px 1fr;align-items:center;gap:10px}
+  .fact .symbol{font-size:23px;line-height:1}
+  .fact strong{display:block;font-weight:500;font-size:14px;letter-spacing:.015em}
+  .fact small{display:block;font-size:11px;opacity:.8;margin-top:3px}
+  .primary{
+    border:0;border-radius:99px;padding:13px 23px;color:#fff;background:linear-gradient(100deg,#659fc4,#4d8fb9);
+    box-shadow:0 5px 12px rgba(61,127,169,.18);text-transform:uppercase;letter-spacing:.04em;font-size:11px;
+    transition:transform .2s,box-shadow .2s;
+  }
+  .primary:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(61,127,169,.25)}
+  .hero .primary{position:relative;z-index:3;margin-top:22px}
+  .section{position:relative;margin-top:24px}
+  .section-title{font-family:Georgia,"Times New Roman",serif;text-transform:uppercase;font-size:clamp(23px,5vw,28px);line-height:1.12;font-weight:500;margin:0 0 12px}
+  .intro{font-size:14px;line-height:1.55;max-width:320px;margin:0}
+  .letter{font-size:24px;line-height:1.1;margin:14px 0 0}
+  .photo-card{
+    position:absolute;right:-8px;top:128px;width:46%;padding:10px 10px 7px;background:rgba(255,255,255,.92);
+    box-shadow:0 8px 25px rgba(56,112,148,.15);transform:rotate(-8deg);border-radius:4px;
+  }
+  .photo-card img{width:100%;height:132px;object-fit:cover;object-position:center 20%;display:block}
+  .photo-caption{text-align:center;font-size:22px;margin-top:3px}
+  .dress{
+    margin-top:150px;padding:25px 22px 24px;
+  }
+  .section-heading{display:flex;align-items:center;gap:13px;margin-bottom:12px}
+  .section-heading .symbol{font-size:25px}
+  h2{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:18px;text-transform:uppercase;margin:0}
+  .dress p,.rsvp p{font-size:13px;line-height:1.5;margin:0 0 14px 38px;max-width:270px}
+  .swatches{display:flex;gap:9px;margin-left:38px;align-items:center}
+  .swatch{width:24px;height:24px;border-radius:50%;border:1px solid rgba(70,120,150,.1);cursor:pointer;transition:transform .15s,outline .15s}
+  .swatch[aria-pressed="true"]{outline:2px solid #659fc4;outline-offset:3px;transform:scale(.9)}
+  .rsvp{margin-top:22px;padding:25px 20px 23px;background:rgba(255,255,255,.64);border:1px solid rgba(255,255,255,.9);border-radius:23px;box-shadow:0 9px 28px rgba(73,130,165,.09)}
+  .rsvp p{margin-bottom:16px}
+  .form{display:grid;gap:10px;margin:0 4px}
+  .field{width:100%;border:1px solid rgba(104,157,190,.3);border-radius:30px;background:rgba(255,255,255,.8);padding:12px 16px;color:var(--ink-dark);font-size:12px;outline:none;box-shadow:inset 0 1px 4px rgba(56,112,148,.04)}
+  .field:focus{border-color:#70a9cc;box-shadow:0 0 0 3px rgba(112,169,204,.13)}
+  select.field{appearance:auto}
+  .form .primary{margin:6px 12px 0}
+  .footer{text-align:center;margin-top:23px}
+  .footer .script{font-size:21px}
+  .heartline{font-size:23px;margin-top:2px}
+  .star{position:absolute;color:#70a9cc;font-size:25px;opacity:.95;user-select:none}
+  .s1{right:30%;top:65px}.s2{right:44%;top:130px}.s3{right:3%;top:40px}.s4{right:6%;top:460px}.s5{left:4%;top:650px}.s6{right:7%;top:850px}
+  .toast{display:none;margin:13px 4px 0;padding:12px;border-radius:14px;background:#e5f5fd;color:#315b7b;font-size:13px;line-height:1.4}
+  .toast.show{display:block}
+  @media(min-width:600px){
+    body{padding-top:36px}
+    .content{padding-left:42px;padding-right:42px}
+    .hero{min-height:420px}
+    .baby{right:-15px;width:60%;height:330px}
+    .hero-copy{max-width:270px}
+  }
+  @media(max-width:380px){
+    body{padding:8px 6px 20px}
+    .invite{border-radius:28px}
+    .content{padding:18px 18px 23px}
+    .topbar{margin-bottom:25px}
+    .hero{min-height:390px}
+    .baby{right:-30px;width:62%;height:285px;top:94px}
+    .hero-copy{max-width:210px;font-size:13px}
+    .fact strong{font-size:12px}
+    .photo-card{width:43%;top:155px}
+    .photo-card img{height:100px}
+    .dress{margin-top:130px;padding:20px 15px}
+    .rsvp{padding:20px 14px}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="invite">
+  <div class="content">
+    <header class="topbar">
+      <button class="icon-btn" aria-label="Прокрутить к началу" id="menuBtn"></button>
+      <div class="brand script">Мой первый год</div>
+      <button class="icon-btn" aria-label="Добавить в избранное" id="heartBtn">♡</button>
+    </header>
+
+    <section class="hero" id="top">
+      <img class="baby" src="фото.jpg?auto=format&fit=crop&w=900&q=85" alt="Малыш улыбается">
+      <p class="eyebrow script">Мне исполняется</p>
+      <h1>1 ГОД</h1>
+      <p class="hero-copy">Приглашаю вас<br>на мой первый<br>день рождения!</p>
+      <span class="star s1">☆</span><span class="star s2">☆</span><span class="star s3">✧</span>
+      <div class="facts">
+        <div class="fact"><span class="symbol">▦</span><div><strong>28 ноября 2026</strong><small>Воскресенье</small></div></div>
+        <div class="fact"><span class="symbol">◷</span><div><strong>14:00</strong></div></div>
+        <div class="fact"><span class="symbol">♧</span><div><strong>GOLDEN DIPLOMAT</strong><small>г. Астана</small><small>ул. Динмухамед Конаев, 29/1</small></div></div>
+      </div>
+      <button class="primary" id="rsvpScroll">Подтвердить участие&nbsp; →</button>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Дорогие<br>родные и друзья!</h2>
+      <span class="star s4">☆</span>
+      <p class="intro">Приглашаю вас на свой первый день рождения! Будет много радости, веселья, вкусной еды и, конечно же, праздничного настроения!</p>
+      <p class="letter script">С любовью,<br>ваша лапушка ♡</p>
+      <div class="photo-card">
+        <img src="фото-1.png" alt="Фото именинника" style="width: 100%; height: 100%; object-fit: cover; display: block; object-position: center bottom;">
+        <div class="photo-caption script">1 год ♡</div>
+      </div>
+      <span class="star s5">☆</span>
+    </section>
+
+    <section class="section dress"></section>
+
+    <section class="section rsvp" id="rsvp">
+      <div class="section-heading"><span class="symbol">♡</span><h2>Подтвердите участие</h2></div>
+      <p></p>
+      <form class="form" id="rsvpForm">
+        <input class="field" name="name" placeholder="Ваше имя" autocomplete="name" required>
+        <select class="field" name="attendance" required>
+          <option value="" selected disabled>Будете с нами?</option>
+          <option value="yes">Да, обязательно буду!</option>
+          <option value="no">К сожалению, не смогу</option>
+          <option value="maybe">Пока не уверен(а)</option>
+        </select>
+        <button class="primary" type="submit">Отправить&nbsp; →</button>
+      </form>
+      <div class="toast" id="toast" role="status"></div>
+    </section>
+    <footer class="footer">
+      <div class="script">С нетерпением жду встречи!</div>
+      <div class="heartline">──── ♡ ────</div>
+    </footer>
+  </div>
+</main>
+<script>
+document.querySelector('#rsvpForm').addEventListener('submit', async event => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const formData = new FormData(form);
+  
+  const name = formData.get('name');
+  const attendanceValue = formData.get('attendance');
+  
+  // Красивый перевод статуса для сообщения
+  const statuses = {
+    yes: '✅ Обязательно буду!',
+    no: '❌ К сожалению, не смогу',
+    maybe: '⚠️ Пока не уверен(а)'
+  };
+  const attendance = statuses[attendanceValue] || attendanceValue;
+  
+  const text = `🎉 Новый ответ на приглашение!\n\n👤 Имя: ${name}\n📌 Статус: ${attendance}`;
+  
+  // Сюда вставьте токен вашего бота от @BotFather
+  const TOKEN = '8773581656:AAG441v6kQKqQtZM7oXmIoqfvQGKgXCtyYo';
+  
+  // Сюда вставьте ID вашей группы (обязательно с минусом в начале, например: -1001234567890)
+  const CHAT_ID = '-1004492942303';
+  
+  try {
+    const response = await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: CHAT_ID, text: text })
+    });
+    
+    const toast = document.querySelector('#toast');
+    if (response.ok) {
+      toast.textContent = `${name}, спасибо! Ваш ответ успешно отправлен организаторам.`;
+      toast.classList.add('show');
+      form.reset();
+    } else {
+      throw new Error('Ошибка отправки');
+    }
+  } catch (error) {
+    const toast = document.querySelector('#toast');
+    toast.textContent = 'Произошла ошибка при отправке. Попробуйте еще раз.';
+    toast.classList.add('show');
+  }
+});
+</script>
+</body>
+</html>
