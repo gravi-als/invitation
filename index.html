@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="ru">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#eaf7fc">
-<title>Мой первый год — приглашение</title>
-<style>
-  :root{
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#eaf7fc">
+    <title>Мой первый год — приглашение</title>
+    <style>
+        :root{
     --ink:#426f91; --ink-dark:#315b7b; --blue:#6ea8cc; --pale:#f2fbff;
     --glass:rgba(255,255,255,.72); --line:rgba(110,168,204,.24);
     --shadow:0 18px 55px rgba(57,112,148,.14);
@@ -42,7 +43,7 @@
   h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:.015em;font-size:clamp(68px,17vw,100px);line-height:.98;margin:0;color:#568db5}
   .hero-copy{max-width:245px;font-size:15px;line-height:1.32;letter-spacing:.04em;text-transform:uppercase;margin:8px 0 24px}
   .baby{
-    position:absolute;right:-42px;top:82px;width:64%;height:310px;object-fit:cover;object-position:center 20%;
+    position:absolute;right:-10px;top:82px;width:45%;height:200px;object-fit:cover;object-position:center 20%;
     border-radius:48% 48% 18% 20% / 36% 36% 12% 12%;mix-blend-mode:multiply;
     mask-image:linear-gradient(to bottom,#000 76%,transparent 100%);
     -webkit-mask-image:linear-gradient(to bottom,#000 76%,transparent 100%);
@@ -64,13 +65,13 @@
   .intro{font-size:14px;line-height:1.55;max-width:320px;margin:0}
   .letter{font-size:24px;line-height:1.1;margin:14px 0 0}
   .photo-card{
-    position:absolute;right:-8px;top:128px;width:46%;padding:10px 10px 7px;background:rgba(255,255,255,.92);
+    position:absolute;right:-8px;top:250px;width:46%;padding:10px 10px 7px;background:rgba(255,255,255,.92);
     box-shadow:0 8px 25px rgba(56,112,148,.15);transform:rotate(-8deg);border-radius:4px;
   }
   .photo-card img{width:100%;height:132px;object-fit:cover;object-position:center 20%;display:block}
   .photo-caption{text-align:center;font-size:22px;margin-top:3px}
   .dress{
-    margin-top:200px;padding:25px 22px 24px;border:1px solid rgba(255,255,255,.85);
+    margin-top:160px;padding:25px 22px 24px;border:1px solid rgba(255,255,255,.85);
     background:rgba(255,255,255,.52);border-radius:22px;box-shadow:0 9px 25px rgba(73,130,165,.08);
   }
   .section-heading{display:flex;align-items:center;gap:13px;margin-bottom:12px}
@@ -149,126 +150,132 @@
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
+
 <body>
-<main class="invite">
-  <div class="content">
-    <header class="topbar">
-      <button class="icon-btn" aria-label="Прокрутить к началу" id="menuBtn"></button>
-      <div class="brand script">Мой первый год</div>
-      <button class="icon-btn" aria-label="Добавить в избранное" id="heartBtn">♡</button>
-    </header>
-
-    <section class="hero" id="top">
-      <img class="baby" src="фото.jpg?auto=format&fit=crop&w=900&q=85" alt="Малыш улыбается">
-      <p class="eyebrow script">Мне исполняется</p>
-      <h1>1 ГОД</h1>
-      <p class="hero-copy">Приглашаю вас<br>на мой первый<br>день рождения!</p>
-      <span class="star s1">☆</span><span class="star s2">☆</span><span class="star s3">✧</span>
-      <div class="facts">
-        <div class="fact"><span class="symbol">▦</span><div><strong>28 ноября 2026</strong><small>Суббота</small></div></div>
-        <div class="fact"><span class="symbol">◷</span><div><strong>14:00</strong></div></div>
-      </div>
-      <button class="primary" id="rsvpScroll">Подтвердить участие&nbsp; →</button>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Дорогие<br>родные и друзья!</h2>
-      <span class="star s4">☆</span>
-      <p class="intro">Дорогие родные и близкие!
-С огромной радостью приглашаем вас разделить с нами особенный и трогательный праздник — первый годик нашего любимого Эмина! 💙Мы будем искренне рады видеть вас рядом в этот важный для нашей семьи день, чтобы вместе разделить радость и подарить нашему малышу ещё больше любви и счастливых моментов.</p>
-      <div class="photo-card">
-        <img src="фото-1.png" alt="Фото именинника" style="width: 100%; height: 100%; object-fit: cover; display: block; object-position: center bottom;">
-        <div class="photo-caption script">1 год ♡</div>
-      </div>
-      <span class="star s5">☆</span>
-    </section>
-
-    <section class="section dress">
-      <div class="facts">
-        <div class="fact"><span class="symbol">▦</span><div><strong>28 Июля 2026</strong><small>Суббота</small></div></div>
-        <div class="fact"><span class="symbol">◷</span><div><strong>14:00</strong></div></div>
-        <div class="fact"><span class="symbol">♧</span><div><strong>ASTANA GOLDEN DIPLOMAT</strong><small>​Улица Динмухамед Конаев, 29/1</small></div></div>
-      </div>
-
-      </div>
-      <span class="star s6">☆</span>
-    </section>
-
-    <section class="section rsvp" id="rsvp">
-      <div class="section-heading"><span class="symbol">♡</span><h2>Подтвердите участие</h2></div>
-      <p></p>
-      <form class="form" id="rsvpForm">
-        <input class="field" name="name" placeholder="Ваше имя" autocomplete="name" required>
-        <div class="radio-group">
-                        <label class="radio-label">
-                            <input type="radio" name="attendance" value="yes" required>
-                            <span>Обязательно буду!</span>
-                        </label>
-                        <label class="radio-label">
-                            <input type="radio" name="attendance" value="no">
-                            <span>К сожалению, не смогу</span>
-                        </label>
-                        <label class="radio-label">
-                            <input type="radio" name="attendance" value="maybe">
-                            <span>Пока не уверен(а)</span>
-                        </label>
+    <main class="invite">
+        <div class="content">
+            <section class="hero" id="top">
+                <img class="baby" src="фото.jpg?auto=format&fit=crop&w=900&q=85" alt="Малыш улыбается">
+                <p class="eyebrow script">Мне исполняется</p>
+                <h1>1 ГОД</h1>
+                <p class="hero-copy">Приглашаю вас<br>на мой первый<br>день рождения!</p>
+                <span class="star s1">☆</span><span class="star s2">☆</span><span class="star s3">✧</span>
+                <div class="facts">
+                    <div class="fact"><span class="symbol">▦</span>
+                        <div><strong>28 ноября 2026</strong><small>Суббота</small></div>
                     </div>
-        <button class="primary" type="submit">Отправить&nbsp; →</button>
-      </form>
-      <div class="toast" id="toast" role="status"></div>
-    </section>
-    <footer class="footer">
-      <div class="script">С нетерпением жду встречи!</div>
-      <div class="heartline">──── ♡ ────</div>
-    </footer>
-  </div>
-</main>
-<script>
-document.querySelector('#rsvpForm').addEventListener('submit', async event => {
-  event.preventDefault();
-  const form = event.currentTarget;
-  const formData = new FormData(form);
-  
-  const name = formData.get('name');
-  const attendanceValue = formData.get('attendance');
-  
-  // Красивый перевод статуса для сообщения
-  const statuses = {
-    yes: '✅ Обязательно буду!',
-    no: '❌ К сожалению, не смогу',
-    maybe: '⚠️ Пока не уверен(а)'
-  };
-  const attendance = statuses[attendanceValue] || attendanceValue;
-  
-  const text = `🎉 Новый ответ на приглашение!\n\n👤 Имя: ${name}\n📌 Статус: ${attendance}`;
-  
-  // Сюда вставьте токен вашего бота от @BotFather
-  const TOKEN = '8773581656:AAG441v6kQKqQtZM7oXmIoqfvQGKgXCtyYo';
-  
-  // Сюда вставьте ID вашей группы (обязательно с минусом в начале, например: -1001234567890)
-  const CHAT_ID = '-1004492942303';
-  
-  try {
-    const response = await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: CHAT_ID, text: text })
+                    <div class="fact"><span class="symbol">◷</span>
+                        <div><strong>14:00</strong></div>
+                    </div>
+                </div>
+                <button class="primary" id="rsvpScroll" style="
+    margin-top: 80px;
+">Подтвердить участие&nbsp; →</button>
+            </section>
+            <section class="section">
+                <h2 class="section-title">Дорогие<br>родные и друзья!</h2>
+                <span class="star s4">☆</span>
+                <p class="intro">Дорогие родные и близкие!
+                    С огромной радостью приглашаем вас разделить с нами особенный и трогательный праздник — первый годик нашего любимого Эмина! 💙Мы будем искренне рады видеть вас рядом в этот важный для нашей семьи день, чтобы вместе разделить радость и подарить нашему малышу ещё больше любви и счастливых моментов.</p>
+                <div class="photo-card">
+                    <img src="фото-1.png" alt="Фото именинника" style="width: 100%; height: 100%; object-fit: cover; display: block; object-position: center bottom;">
+                    <div class="photo-caption script">1 год ♡</div>
+                </div>
+                <span class="star s5">☆</span>
+            </section>
+            <section class="section dress">
+                <div class="facts">
+                    <div class="fact"><span class="symbol">▦</span>
+                        <div><strong>28 Июля 2026</strong><small>Суббота</small></div>
+                    </div>
+                    <div class="fact"><span class="symbol">◷</span>
+                        <div><strong>14:00</strong></div>
+                    </div>
+                    <div class="fact"><span class="symbol">♧</span>
+                        <div><strong>ASTANA GOLDEN DIPLOMAT</strong><small>​Улица Динмухамед Конаев, 29/1</small></div>
+                    </div>
+                </div>
+        </div>
+        <span class="star s6">☆</span>
+        </section>
+        <section class="section rsvp" id="rsvp">
+            <div class="section-heading"><span class="symbol">♡</span>
+                <h2>Подтвердите участие</h2>
+            </div>
+            <p></p>
+            <form class="form" id="rsvpForm">
+                <input class="field" name="name" placeholder="Ваше имя" autocomplete="name" required>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="attendance" value="yes" required>
+                        <span>Обязательно буду!</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="attendance" value="no">
+                        <span>К сожалению, не смогу</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="attendance" value="maybe">
+                        <span>Пока не уверен(а)</span>
+                    </label>
+                </div>
+                <button class="primary" type="submit">Отправить&nbsp; →</button>
+            </form>
+            <div class="toast" id="toast" role="status"></div>
+        </section>
+        <footer class="footer">
+            <div class="script">С нетерпением жду встречи!</div>
+            <div class="heartline">──── ♡ ────</div>
+        </footer>
+        </div>
+    </main>
+    <script>
+    document.querySelector('#rsvpForm').addEventListener('submit', async event => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        const formData = new FormData(form);
+
+        const name = formData.get('name');
+        const attendanceValue = formData.get('attendance');
+
+        // Красивый перевод статуса для сообщения
+        const statuses = {
+            yes: '✅ Обязательно буду!',
+            no: '❌ К сожалению, не смогу',
+            maybe: '⚠️ Пока не уверен(а)'
+        };
+        const attendance = statuses[attendanceValue] || attendanceValue;
+
+        const text = `🎉 Новый ответ на приглашение!\n\n👤 Имя: ${name}\n📌 Статус: ${attendance}`;
+
+        // Сюда вставьте токен вашего бота от @BotFather
+        const TOKEN = '8773581656:AAG441v6kQKqQtZM7oXmIoqfvQGKgXCtyYo';
+
+        // Сюда вставьте ID вашей группы (обязательно с минусом в начале, например: -1001234567890)
+        const CHAT_ID = '-1004492942303';
+
+        try {
+            const response = await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: CHAT_ID, text: text })
+            });
+
+            const toast = document.querySelector('#toast');
+            if (response.ok) {
+                toast.textContent = `${name}, спасибо! Ваш ответ успешно отправлен организаторам.`;
+                toast.classList.add('show');
+                form.reset();
+            } else {
+                throw new Error('Ошибка отправки');
+            }
+        } catch (error) {
+            const toast = document.querySelector('#toast');
+            toast.textContent = 'Произошла ошибка при отправке. Попробуйте еще раз.';
+            toast.classList.add('show');
+        }
     });
-    
-    const toast = document.querySelector('#toast');
-    if (response.ok) {
-      toast.textContent = `${name}, спасибо! Ваш ответ успешно отправлен организаторам.`;
-      toast.classList.add('show');
-      form.reset();
-    } else {
-      throw new Error('Ошибка отправки');
-    }
-  } catch (error) {
-    const toast = document.querySelector('#toast');
-    toast.textContent = 'Произошла ошибка при отправке. Попробуйте еще раз.';
-    toast.classList.add('show');
-  }
-});
-</script>
+    </script>
 </body>
+
 </html>
